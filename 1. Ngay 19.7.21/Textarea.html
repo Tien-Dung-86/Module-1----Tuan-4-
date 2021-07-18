@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form>
+  <div style="text-align: center">
+    <h3>Type anything slowly</h3>
+    <textarea id="text" cols="40" rows="10" onkeydown="typeText()"></textarea>
+  </div>
+</form>
+</body>
+<script>
+  let str = "Tôi là một";
+  let arr = str.split('');
+  let result = '';
+  let index = 0;
+
+  // function typeText() {
+  //   result += arr[index];
+  //   index++;
+  //   console.log(result);
+  //   document.getElementById('text').value = result;
+  //   if (index === arr.length + 1) {
+  //     document.getElementById("text").value = "";
+  //     result = "";
+  //   }
+  // }
+  function typeText() {
+    let text = document.getElementById("text").value;
+    for(let i = 1; i <= text.length; i++){
+      result += arr[index];
+      if (i === arr.length){
+        result = '';
+      }
+    }
+    document.getElementById("text").value = result;
+    result = '';
+  }
+</script>
+</html>

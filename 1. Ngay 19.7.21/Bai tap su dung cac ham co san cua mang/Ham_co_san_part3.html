@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let message  = 'The Quick Brown Fox ';
+    let UPPER = 'ABCDEFGHIKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        let result = []
+    for(x=0; x<message.length; x++)
+    {
+        if(UPPER.indexOf(message[x]) !== -1)
+        {
+            result.push(message[x].toLowerCase());
+        }
+        else if(LOWER.indexOf(message[x]) !== -1)
+        {
+            result.push(message[x].toUpperCase());
+        }
+        else
+        {
+            result.push(message[x]);
+        }
+    }
+    console.log(result.join(''));
+</script>
+</body>
+</html>
