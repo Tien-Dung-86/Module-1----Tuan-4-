@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<!--<h1>Transfer feet to meter</h1>-->
+<!--Input number:-->
+<!--<input type="text" id="num">-->
+<!--<br> <br>-->
+<!--<button type="button" onclick="footToMeter()">Foot to Meter</button>-->
+<!--<span>&nbsp</span>-->
+<!--<button type="button" onclick="meterToFoot()">Meter to Foot</button>-->
+<!--<br>-->
+<!--<p id="result"></p>-->
+</body>
+</html>
+
+<script>
+    // function footToMeter(foot){
+    //     let feet = parseFloat(document.getElementById("num").value);
+    //     meter = feet * 0.305;
+    //     document.getElementById("result").innerText = feet + " Feet = " + meter + " Meter";
+    // }
+    //
+    // function meterToFoot(meter){
+    //     let meters = parseFloat(document.getElementById("num").value);
+    //     feet = meters * 3.279;
+    //     document.getElementById("result").innerText = meters + " Meter = " + feet + " Feet";
+    // }
+
+
+    function footToMeter(foot){
+        meter = foot * 0.305;
+        return meter
+    }
+
+    function meterToFoot(meter){
+        feet = meter * 3.279;
+        return feet
+    }
+
+    let result1 = footToMeter(2);
+    console.log(result1);
+    let result2 = meterToFoot(60);
+    console.log(result2);
+</script>
