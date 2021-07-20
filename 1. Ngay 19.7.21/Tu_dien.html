@@ -5,20 +5,23 @@
     <title>Từ điển</title>
 </head>
 <body>
-<form>
-  <h1>DICTIONARY</h1>
-  <input type="text" id="inputData">
-  <br>
-  <button type="button" onclick="">Search</button>
-</form>
 </body>
 </html>
 
 <script>
- const vietNam =  [
-   {"id": 1,
-   "word": "Lập trình"
-   }
+    let hoaQua = ["Táo", "Cam", "Dừa", "Chuối", "Dứa", "Chanh"];
+    let fruits = ["Apple", "Orange", "Coconut", "Banana", "Pineapple", "Lemon"];
+    let inputInfo = prompt("Search information");
+    let count = 0;
+    for (i = 0; i < hoaQua.length; i++) {
+        if (inputInfo === hoaQua[i]) {
+            console.log(hoaQua [i] + " dịch sang tiếng anh là: " + fruits  [i]);
+            break
+            }
+        count++;
+    }
+    if(count === hoaQua.length) {
+        console.log("Không tìm thấy dữ liệu")
+    };
 
- ]
 </script>
