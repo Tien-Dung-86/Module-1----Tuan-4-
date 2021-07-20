@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm Part 5</title>
+</head>
+<body>
+<script>
+    function compareNumbers(a, b, c) {
+        if ((a > b) && (a > c)) {
+            document.write(a + " is the max valuable")
+        } else {
+            if (b > c) {
+                document.write(b + " is the max valuable")
+            } else {
+                document.write(c + " is the max valuable")
+            }
+        }
+    }
+
+    let x = prompt('Input first number');
+    let y = prompt('Input second number');
+    let z = prompt('Input third number');
+    compareNumbers(x, y, z);
+
+
+</script>
+</body>
+</html>

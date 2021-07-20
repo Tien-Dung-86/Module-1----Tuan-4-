@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm Part 9</title>
+</head>
+<body>
+<script>
+    let arr = ["a", "b", "c", "d", "a", "e"];
+    // console.log("Số lần xuất hiện: " + result)
+    function myFunction(character) {
+       let a=0
+        let count = 0;
+        for (let i = 0; i < arr.length ; i++) {
+            if (character === arr[i]) {
+                count++;
+            } else {
+               a++
+            }
+        }
+        if(a===arr.length)
+        console.log( "-1")
+        else {
+           console.log( count)
+        }
+    }
+    myFunction('a');
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập, tạo và sử dụng hàm Part 7</title>
+</head>
+<body>
+<script>
+    function swap(a, b) {
+            let arr = [];
+        arr.push(a, b);
+        arr.reverse();
+        return arr
+
+    }
+
+    let x = prompt("Input first number");
+    let y = prompt("Input second number");
+    let array = swap(x, y);
+    result = array.join();
+    console.log("x = " + x + ", y = " + y);
+    console.log("Đảo ngược x và y: " + result);
+</script>
+</body>
+</html>

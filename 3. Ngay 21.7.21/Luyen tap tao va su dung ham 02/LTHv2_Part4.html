@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm Part 4</title>
+</head>
+<body>
+<script>
+    function isNumber(character) {
+        if (isNaN(character)) {
+            return false
+        }
+        return true
+    }
+
+    let N = prompt("Input:");
+    let result = isNumber(N);
+    if (result) {
+        alert(N + ": true");
+    } else {
+        alert(N + ": false");
+    }
+
+</script>
+</body>
+</html>

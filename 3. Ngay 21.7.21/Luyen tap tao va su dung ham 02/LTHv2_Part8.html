@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm Part 8</title>
+</head>
+<body>
+<script>
+    function swap(a, b, c, d, e, f) {
+        let array = [a, b, c, d, e, f]
+        let first = 0;
+        let last = array.length - 1;
+        while (first <= last) {
+            let temp = array[first];
+            array[first] = array[last];
+            array [last] = temp;
+            first++;
+            last--
+        }
+        return array
+    }
+
+    let z = prompt("Input first number");
+    let x = prompt("Input second number");
+    let c = prompt("Input third number");
+    let v = prompt("Input fourth number");
+    let b = prompt("Input fifth number");
+    let n = prompt("Input sixth number");
+    let result = swap(z, x, c, v, b, n);
+    console.log("Đảo ngược mảng array: " + result);
+</script>
+</body>
+</html>

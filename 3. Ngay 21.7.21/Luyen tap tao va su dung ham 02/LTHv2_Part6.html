@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo hàm và sử dụng hàm Part 6</title>
+</head>
+<body>
+<script>
+  function checkNumber(number){
+    let numbers = true;
+    if(number < 0){
+      return false
+    }
+    return true
+  }
+
+  let N = prompt("Input number")
+  let result = checkNumber(N);
+  if(result) {
+    document.write(N + ": is true")
+  } else {
+    document.write(N + ": is false")
+  }
+
+</script>
+</body>
+</html>
