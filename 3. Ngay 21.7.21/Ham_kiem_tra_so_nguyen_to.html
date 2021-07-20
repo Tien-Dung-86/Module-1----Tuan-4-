@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+  function isPrime(number){
+    for (i = 2; i < number; i++){
+      if (number % i === 0){
+        return false
+      }
+    }
+    return true
+  }
+
+  let number = +prompt("Input number:");
+  let N = 2;
+  let count = 0;
+  while (count < number) {
+    if (isPrime((N))) {
+      document.write(N + "</br>")
+      count++
+    }
+    N++;
+  }
+</script>
+</body>
+</html>
