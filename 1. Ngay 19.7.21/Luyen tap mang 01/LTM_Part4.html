@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = new Array();
+  for (i = 0; i <= 5; i++){
+    let inputNumbers = prompt("Input number:");
+    arr.push(inputNumbers);
+  }
+  console.log(arr);
+
+  let first  = 0;
+  let last = arr.length - 1;
+  while( first < last){
+    let a  = arr[first];
+    arr[first] = arr[last];
+    arr[last] = a;
+    first++;
+    last--;
+  }
+  console.log("Giá trị đảo ngược của mảng arr là: " + arr);
+</script>
+</body>
+</html>

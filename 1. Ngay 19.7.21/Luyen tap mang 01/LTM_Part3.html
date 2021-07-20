@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tâp mảng Part 3</title>
+</head>
+<body>
+<script>
+    let arr = new Array();
+    let total = 0;
+
+    for (let i = 0; i <= 9; i++) {
+        let a = +prompt("Input number");
+        arr.push(a);
+        total += arr[i];
+    }
+    average = total / arr.length;
+    console.log(arr);
+    console.log("Giá trị trung bình của mảng là: " + average);
+
+
+    let max = arr[0];
+    for (j = 0; j < arr.length; j++) {
+        if (max < arr[j]) {
+            max = arr [j]
+        }
+    }
+    console.log("Giá trị lớn nhất trong mảng là: " + max);
+
+</script>
+</body>
+</html>
+

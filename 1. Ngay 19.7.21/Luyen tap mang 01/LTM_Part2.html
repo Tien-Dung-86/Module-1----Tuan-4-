@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng Part 2</title>
+</head>
+<body>
+<script>
+    let arr = new Array();
+    for (let i = 0; i <= 9; i++) {
+        let a = +prompt("Input number");
+        arr.push(a);
+    }
+    console.log(arr);
+
+    let max = arr[0];
+    for (j = 0; j < arr.length; j++) {
+        if (max < arr[j]) {
+            max = arr [j]
+        }
+    }
+    console.log("Giá trị lớn nhất trong mảng là: " + max);
+</script>
+</body>
+</html>

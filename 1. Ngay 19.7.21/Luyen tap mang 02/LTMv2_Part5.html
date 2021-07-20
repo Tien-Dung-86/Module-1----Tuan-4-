@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng v2 Part 5</title>
+</head>
+<body>
+<script>
+    let str1 = "Codegym";
+    let str2 = "Rasing the bar";
+    let arr1 = str1.split("");
+    let arr2 = str2.split("")
+
+
+    for (i = 0; i <arr1.length - 1; i++){
+        for (j = 0; j < arr2.length - 1; j++){
+            if (arr1[i] !== arr2[j]){
+                alert("Hai chuỗi " + arr1 + " và chuỗi " + arr2 + " không giống nhau");
+                break
+            } else{
+                alert("Hai chuỗi " + arr1 + " và chuỗi " + arr2 + " giống nhau");
+                break
+            }
+        }
+    }
+
+    // if(str1 === str2){
+    //     alert("Chuỗi " + str1 + " và chuỗi "  + str2 + " giống nhau");
+    // } else{
+    //     alert("Chuỗi " + str1 + " và chuỗi "  + str2 + " không giống nhau");
+    // }
+
+</script>
+</body>
+</html>

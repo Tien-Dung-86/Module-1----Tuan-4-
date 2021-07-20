@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+    let arr = new Array();
+    for (let i = 0; i <= 9; i++) {
+        let a = prompt("Input number");
+        arr.push(a);
+    }
+    console.log(arr);
+
+    let result = searchCount(arr, 10);
+    console.log("số lần xuất hiện: " + result);
+
+
+    function searchCount(arr, value){
+       let count = 0;
+       for (j = 0; j < arr.length; j++){
+           if (arr[j] >= 10){
+               count++;
+           }
+       }
+       return count;
+    }
+</script>
