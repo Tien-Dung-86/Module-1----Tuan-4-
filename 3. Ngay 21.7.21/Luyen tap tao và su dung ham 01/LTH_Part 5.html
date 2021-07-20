@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm Part 5</title>
+</head>
+<body>
+<script>
+  let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+  let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+  let inputStar = prompt("Input star:");
+
+  function myFunction() {
+      let count = 0;
+      for (i = 0; i < star1.length; i++) {
+        if (inputStar === star1[i]){
+           console.log("Ngôi sao " + star1[i] + " ở chòm sao " + star2 [i]);
+           break
+        }
+          count++;
+      }
+      if (count === star1.length){
+          console.log("No")
+      }
+  }
+
+  myFunction()
+</script>
+</body>
+</html>
+
