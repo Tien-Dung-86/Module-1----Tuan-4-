@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Funny circle Part 6</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1366px" height="768px" style="border: 1px solid black"></canvas>
+</body>
+</html>
+
+<script>
+  function Circle(x, y, radius, color){
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.getRandomHex = function(){
+      return Math.floor(Math.random() * 255);
+    }
+    this.getRandomColor = function(){
+      let red = getRandomHex()
+    }
+  }
+  function getRandomHex(){
+    return Math.floor(Math.random() * 255);
+  }
+
+  function getRandomColor(){
+    let red = getRandomHex();
+    let blue = getRandomHex();
+    let green = getRandomHex();
+    return "rgb(" + red + "," + blue + "," + green +")";
+  }
+
+  function createCircle(){
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let radius = Math.floor(Math.random() * 100);
+    let color = getRandomColor();
+    let x = Math.random() * window.innerWidth;
+    let y = Math.random() * window.innerHeight;
+    let circle = new Circle(x, y, radius);
+    ctx.beginPath();
+    ctx.arc(circle.x, circle.y, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  function multiCreateCircle(){
+    for (i = 0; i < 10; i++){
+      createCircle()
+    }
+  }
+
+  multiCreateCircle()
+
+</script>
