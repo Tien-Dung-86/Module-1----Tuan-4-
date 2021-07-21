@@ -30,14 +30,13 @@
   }
 
 
-
   function createRectangle(){
     let ctx = document.getElementById("myCanvas").getContext("2d");
   let rect = new Rectangle(100, 100, 100, 80);
   document.getElementById("result").innerText = "Area = " + rect.getArea() + "m^2" + "; " + "Perimeter = " +  rect.getPerimeter() + "m";
   ctx.beginPath();
   ctx.fillStyle = "green";
-  ctx.strokeRect(100, 100, 100, 80);
+  ctx.fillRect(100, 100, 100, 80);
   }
 
  createRectangle()
