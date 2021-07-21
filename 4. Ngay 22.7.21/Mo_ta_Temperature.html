@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô tả Temperature</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  class Temperature{
+    constructor(degree) {
+      this.degree = degree;
+    }
+    getTransferCToF(){
+      let fah = 9/5 *  this.degree + 32;
+      return fah
+    }
+    getTransferCToK(){
+      let kev = this.degree + 273;
+      return kev
+    }
+  }
+
+  let temperature = new Temperature(25);
+  let fahreint = temperature.getTransferCToF();
+  let kevin = temperature.getTransferCToK();
+  document.write("25 C = " + fahreint + " F" + "<br/>")
+  document.write("25 C = " + kevin + " K" + "<br/>")
+</script>
