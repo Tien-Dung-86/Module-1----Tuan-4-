@@ -10,19 +10,22 @@
         constructor(weight) {
             this.weight = weight;
         }
+
         getWeight() {
-            return this.weight;
+            return this.weight
         }
+
         decreaseWeight() {
             if (this.weight > 0) {
                 this.weight--;
             }
         }
+
         isEmpty() {
             if (this.weight === 0) {
-                return true;
+                return true
             } else {
-                return false;
+                return false
             }
         }
     }
@@ -33,52 +36,66 @@
             this.gender = gender;
             this.weight = weight;
         }
-        isMale() {
-            return this.gender;
-        }
-        setGender(gender) {
-            this.gender = gender;
-        }
+
         checkApple(Apple) {
             return Apple.isEmpty()
         }
-        eat(apple) {
+
+        isMale() {
+            return this.gender;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        eat(Apple) {
             apple.decreaseWeight();
             this.weight++;
         }
+
         say(sentences) {
-            document.write(this.name + ' eat f*cking apple' + '<br/>')
+            document.write(this.name + " eat the apple" + "<br/>")
         }
+
         getName() {
             return this.name;
         }
-        setName(name) {
+
+        setName(Name) {
             this.name = name;
         }
+
         getWeight() {
             return this.weight;
         }
+
         setWeight(weight) {
             this.weight = weight;
         }
     }
 
     let apple = new Apple(10);
-    let male = new Human('Adam', true, 80);
-    let female = new Human('Eva', false, 55);
+    let male = new Human("Adam", true, "80");
+    let female = new Human("Eva", false, "55");
     while (!apple.isEmpty()) {
         if (apple.getWeight() % 2 === 0) {
+            apple.getWeight();
             male.say();
-            male.eat(apple);
-            document.write('- Trọng lượng của quả táo còn lại: ' + apple.getWeight() + '<br/>');
-            document.write('Khối lượng của Adam' + male.getWeight() + '<br/>');
+            male.eat(Apple);
+            document.write("Apple weight: " + apple.getWeight() + "<br/>")
+            document.write(male.getName() + male.getWeight() + "<br/>")
+            document.write("<br/>")
         } else {
+            apple.getWeight();
             female.say();
-            female.eat(apple);
-            document.write('+ Trọng lượng của quả táo còn lại: ' + apple.getWeight() + '<br/>');
-            document.write('Khối lượng của Adam' + female.getWeight() + '<br/>');
+            female.eat(Apple);
+            document.write("Apple weight: " + apple.getWeight() + "<br/>")
+            document.write(female.getName() + female.getWeight() + "<br/>")
+            document.write("<br/>")
         }
     }
+
 </script>
 </body>
 </html>
