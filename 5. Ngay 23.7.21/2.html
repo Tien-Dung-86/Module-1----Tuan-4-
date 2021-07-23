@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" id="bat">Bật</button>
+<button type="button" id="tat">Tắt</button>
+<br>
+<p id='result'></p>
+</body>
+</html>
+
+<script>
+  class SwitchButton {
+    constructor(status) {
+      this.status = status;
+    }
+    connnectToLamp(lamp) {
+      this.lamp = lamp;
+    }
+    switchOff() {
+      this.status = false;
+      lamp.turnOff();
+    }
+    switchOn() {
+      this.status = true
+      lamp.turnOn();
+    }
+  }
+
+  class ElectricLamp {
+    constructor(status) {
+      this.status = status;
+    }
+    turnOff() {
+      this.status = false;
+      document.getElementById('result').innerText = 'Bóng đèn đang tắt';
+    }
+    turnOn() {
+      this.status = true;
+      document.getElementById('result').innerText = 'Bóng đèn đang bật';
+    }
+  }
+  let lamp = new ElectricLamp(false);
+  let switchButton = new SwitchButton(false);
+  switchButton.connnectToLamp(lamp);
+
+  function bat() {
+    lamp.turnOff;
+  }
+
+  function tat() {
+    lamp.turnOn;
+  }
+</script>
