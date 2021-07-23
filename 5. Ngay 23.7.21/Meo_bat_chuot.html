@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng quá trình mèo bắt chuột</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        // setName(){
+        //   this.name = name;
+        // }
+        getWeight(){
+            return this.weight
+        }
+        getSpeed() {
+            return this.speed;
+        }
+
+        deadOrAlive(status) {
+            if(this.status) {
+                document.write("<br/>" + this.name + " is Alive");
+            } else {
+                document.write("<br/>" + this.name + " is Dead")
+            }
+        }
+        Sound(sentences){
+            document.write("<br/>" + "Chizzzzzzzz")
+        }
+        decreaseWeight(weight) {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        }
+    }
+
+    class Cat{
+        constructor(name, weight, speed){
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+        getName(){
+            return this.name
+        }
+        getWeight(){
+            return this.weight
+        }
+        getSpeed(){
+            return this.speed
+        }
+        Sound(sentences){
+            document.write("<br/>" + "Meowwwwwwwww" + "<br/>")
+        }
+        catchRat(){
+            if(this.getSpeed() > rat.getSpeed()){
+                document.write("Tom hunt 's successful")
+            } else{
+                document.write("Try Again")
+            }
+        }
+        eat(Rat){
+            rat.decreaseWeight();
+            this.weight++;
+        }
+    }
+
+    let rat = new Rat("Mickey", 5, 8);
+    let cat = new Cat("Tom", 20, 10);
+
+    document.write("Name: " + rat.getName() + "<br/>" + "Weight: " + rat.getWeight() + " (pounds)" + "<br/>" + "Speed: " + rat.getSpeed() + " (m/s)" );
+    rat.Sound();
+    document.write("<br/>" + rat.getName() + " find food" + " and meet " + cat.getName() + "<br/>");
+    document.write("<br/>")
+    document.write("Name: " + cat.getName() + "<br/>" + "Weight: " + cat.getWeight() + " (pounds)" + "<br/>" + "Speed: " + cat.getSpeed() + " (m/s)" );
+    cat.Sound();
+    document.write(cat.getName() + " hunter " + rat.getName() + "<br/>");
+    document.write("<br/>")
+    cat.catchRat()
+    rat.deadOrAlive()
+    document.write("<br/>");
+    document.write("<br/>" + cat.getName() + " eat " + rat.getName());
+
+    let count = 1;
+    while(count <= rat.getWeight()) {
+        cat.eat(Rat);
+        document.write("<br/>" + "The weight of " + rat.getName() + ": " + rat.getWeight() + " (pounds)");
+        document.write("<br/>" + "The weight of " + cat.getName() + ": " + cat.getWeight() + " (pounds)");
+    }
+</script>
+</body>
+</html>
