@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng Remote TV</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(channel, volume) {
+            this.channel = channel;
+            this.volume = volume;
+        }
+
+        changeChannel() {
+            return this.channel;
+        }
+
+        changeVolume() {
+            return this.volume
+
+        }
+    }
+
+    class Television {
+        constructor(channel, volume, status) {
+            this.channel = channel;
+            this.volume = volume;
+            this.status = status;
+        }
+
+        getChannel() {
+            return this.channel
+        }
+
+        getVolume(){
+            return this.volume
+        }
+
+        checkStatus(status) {
+            if (this.status) {
+                document.write("Television is turn on")
+            } else {
+                document.write("Television is turn off")
+            }
+        }
+
+        controlChannel(channel) {
+            return remote.changeChannel();
+
+        }
+
+        controlVolume(volume) {
+            remote.changeVolume();
+            this.volume = this.volume + 2;
+        }
+    }
+
+    let remote = new Remote(3);
+    let television = new Television(7, 20, true);
+
+    television.checkStatus();
+    document.write("<br/>" + "Channel: " + television.getChannel());
+    document.write("<br/>" + "Channel: " + television.controlChannel());
+    document.write("<br/>" + "Volume: " + television.getVolume());
+    television.controlVolume();
+    document.write("<br/>" + "Increase volume to : " + television.getVolume());
+
+</script>
+</body>
+</html>
