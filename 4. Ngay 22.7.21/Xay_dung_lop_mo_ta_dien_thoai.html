@@ -6,36 +6,74 @@
 </head>
 <body>
 <script>
-  let Mobile1 = function(name, battery, message, status, check){
-        this.name = name;
-        this.battery = battery;
-        this.message = message;
-        this.status = status;
-        this.check = check;
-      this.getName = function(name){
-          return this.name
-      }
-      this.getBattery = function(battery){
-          return this.battery
-      }
-      this.getMessage = function(message){
-          return this.message
-      }
-      this.getCheck = function(check){
-          return this.check
-      }
-      this.decreaseBattery = function(){
-          if(this.battery > 0){
-              this.battery--;
-          }
-      }
-      this.turnOn = function(){
-          this.status = true;
-      }
-      this.turnOff = function(){
-          this.status = false;
-      }
-  }
+    class Mobile {
+        constructor(name, brand, battery, status, message) {
+            this.name = name;
+            this.brand = brand;
+            this.battery = battery;
+            this.status = status;
+            this.message = message;
+            this.arrMessage = [];
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getBattery() {
+            return this.battery;
+        }
+
+        sendMessage(mobile, message) {
+            mobile.arrMessage.push(message);
+            this.battery--;
+        }
+
+        showMessage() {
+            document.write(this.arrMessage);
+            this.battery--;
+        }
+
+        showStatus(status) {
+            if (this.status === "On") {
+                document.write(this.name + " is Turn On");
+            } else {
+                document.write(this.name + " is Turn Off");
+            }
+        }
+
+        check() {
+            if (this.message) {
+                document.write("You have a message" + "<br/>")
+            } else {
+                document.write("Nothing")
+            }
+        }
+
+        chargeBattery() {
+            while (this.battery < 100) {
+                this.battery++;
+            }
+        }
+    }
+
+    let mobile1 = new Mobile("Samsung Galaxy Note 22 Ultra", "Samsung", 100, "On");
+    let mobile2 = new Mobile("Iphone 12 pro max", "Apple", 2, "On", true);
+    mobile1.showStatus();
+    document.write("<br/>" + "Batttery: " + mobile1.getBattery() + "<br/>");
+    mobile1.sendMessage(mobile2, "Hi, I'm Android");
+    document.write(mobile1.getName() + " write a message: ");
+    mobile2.showMessage()
+    document.write("<br/>" + "Batttery after send message: " + mobile1.getBattery() + "<br/>");
+    document.write("<br/>");
+
+    mobile2.check();
+    mobile2.showStatus();
+    document.write("<br/>" + "Battery: " + mobile2.getBattery() + "<br/>");
+    mobile2.showMessage();
+    document.write("<br/>" + "Battery after show message: " + mobile2.getBattery() + "<br/>");
+    mobile2.chargeBattery();
+    document.write("Battery: " + mobile2.getBattery())
 </script>
 </body>
 </html>
