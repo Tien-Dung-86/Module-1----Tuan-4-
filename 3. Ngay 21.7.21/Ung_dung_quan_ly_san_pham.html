@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add New Product</h1>
+    <form action="">
+        <div class="input-and-add-product">
+            <input id="input" type="text">
+            <button class="add-btn" onclick="add()" type="button">Add</button>
+        </div>
+    </form>
+    <div id="data"></div>
+</div>
+
+<script>
+    class Product {
+        arrayProduct;
+
+        constructor(array) {
+            this.arrayProduct = array;
+        }
+
+        display () {
+            let data = "<table><tr><th width='160px' height='32px'>Product Name</th><th>" + this.arrayProduct.length + " Product</th></tr> ";
+            for (let i = 0; i < this.arrayProduct.length; i++) {
+                data += "<tr><td width='160px' height='32px'>" + this.arrayProduct[i] + "</td><td><button type='button' onclick='edit(" + i + ")'>Edit</button></td><td><button type='button' onclick='delete1(" + i + ")'>Delete</button></td></tr>"
+            }
+            data += "</table>";
+            document.getElementById("data").innerHTML = data;
+        }
+
+        addProduct(input) {
+            return this.arrayProduct.push(input) ;
+        }
+
+        editProduct(index) {
+            for (let i = 0; i < this.arrayProduct.length; i++) {
+                if (i == index) {
+                    this.arrayProduct[i] = prompt("Sửa tên sản phẩm")
+                    return this.arrayProduct;
+                }
+            }
+        }
+
+        deleteProduct(index) {
+            this.arrayProduct.splice(index,1);
+            return this.arrayProduct;
+        }
+    }
+
+    //hiển thị bảng
+    let myProduct = [];
+    let product = new Product(myProduct);
+    product.display()
+
+
+    //chạy các nút nhấn
+    function add() {
+        let a = document.getElementById("input").value;
+        product.addProduct(a);
+        document.getElementById("input").value = "";
+        product.display();
+    }
+
+    function  edit(i) {
+        product.editProduct(i);
+        product.display();
+    }
+
+    function delete1(i) {
+        product.deleteProduct();
+        product.display();
+    }
+
+</script>
+</body>
+</html>

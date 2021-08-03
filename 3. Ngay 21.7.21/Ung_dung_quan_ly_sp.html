@@ -3,60 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Ứng dụng quản lý sản phẩm</title>
-  <style>
-    button{
-      color: white;
-      background: lawngreen;
-      border-radius: 4px;
-      width: 60px;
-      height: 30px;
-      position: relative;
-    }
-    input{
-      width: 300px;
-      height: 25px;
-      position: relative;
-      padding-top: 10px;
-    }
-    fieldset{
-      width: 400px;
-      height: 50px;
-      background: lightgray;
-      position: absolute;
-    }
-  </style>
+    <style>
+        button {
+            color: white;
+            background: mediumspringgreen;
+            border-radius: 4px;
+            width: 50px;
+            height: 30px;
+            position: relative;
+        }
+
+        input {
+            width: 300px;
+            height: 25px;
+            position: relative;
+            padding-top: 10px;
+        }
+
+        fieldset {
+            width: 400px;
+            height: 50px;
+            background: lightgray;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
 <h2>Add New Product</h2>
 <form class="art1">
-  <fieldset>
-  <input type="text" id="name">
-  <span>&nbsp</span>
-  <button type="button" onclick="addArray()">Add</button>
-  </fieldset>
+    <fieldset>
+        <input type="text" id="name">
+        <span>&nbsp</span>
+        <button type="button" onclick="addArray()">Add</button>
+    </fieldset>
 </form>
 <br><br><br><br>
 <h2>Display All Product</h2>
-<div id="container"></div>
+<table>
+    <tr>
+        <th>Product Name</th>
+        <th id="countProduct"></th>
+    </tr>
+</table>
+<p id="result"></p>
 </body>
 </html>
 
 <script>
-  let x = 0;
-  let arr = Array();
+    let x = 0;
+    let arr = Array();
 
-  function addArray(){
-    arr[x] = document.getElementById("name").value;
-    let atx;
-    atx = "<table cellspacing ='0' cellpadding ='0'>"
-    for (i = 0; i <= arr.length - 1; i++){
-      atx += "<tr>";
-      for (j = 0; j < i; j++){
-
-      }
+    function addArray() {
+        arr[x] = document.getElementById("name").value;
+        let atx;
+        atx = "<table border='1' cellspacing ='0' cellpadding ='0'>"
+        for (let i = 0; i <= arr.length - 1; i++) {
+            atx += "<tr>" + "<td width='200px'>" + arr[i] + "</td>" + "<td>" + "<button type='button' onclick='editProduct()'>" + "Edit" + "</button>" + "</td>" + "<td width='20px'>" + "</td>" + "<td>" + "<button type='button' onclick='deleteProduct()'>" + "Delete" + "</button>" + "</td>" + "</tr>"
+        }
+        atx += "</table>"
+        alert("Confirm add product: " + arr[x]);
+        x++
+        document.getElementById("result").innerHTML = atx
     }
 
+    function deleteProduct(){
+        arr[x] = document.getElementById("name").value;
+        for (i = 0; i < arr.length - 1; i++ ){
+            arr.replace(arr[i],"" )
+        }
+    }
 
-   // let (i = 0; )
-  }
 </script>
